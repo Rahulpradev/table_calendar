@@ -104,6 +104,7 @@ class _TableEventsExampleState extends State<TableEventsExample> {
             calendarStyle: CalendarStyle(
               // Use `CalendarStyle` to customize the UI
               outsideDaysVisible: false,
+              impactMarkerColor: Color.fromARGB(255, 103, 215, 101),
             ),
             onDaySelected: _onDaySelected,
             onRangeSelected: _onRangeSelected,

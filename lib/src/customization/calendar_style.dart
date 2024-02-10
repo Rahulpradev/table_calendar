@@ -151,6 +151,8 @@ class CalendarStyle {
   /// Padding for the internal `Table` widget.
   final EdgeInsets tablePadding;
 
+  final Color impactMarkerColor;
+
   /// Creates a `CalendarStyle` used by `TableCalendar` widget.
   const CalendarStyle({
     this.isTodayHighlighted = true,
@@ -227,7 +229,13 @@ class CalendarStyle {
     this.rowDecoration = const BoxDecoration(),
     this.tableBorder = const TableBorder(),
     this.tablePadding = const EdgeInsets.all(0),
+    this.impactMarkerColor = const Color(0xFFBFBFBF),
   });
+}
+
+class CustomCalendarStyle {
+  Color impactColor;
+  CustomCalendarStyle(this.impactColor);
 }
 
 /// Helper class containing data for internal `Positioned` widget.

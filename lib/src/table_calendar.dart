@@ -673,7 +673,8 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
                 mainAxisSize: MainAxisSize.min,
                 children: events
                     .take(widget.calendarStyle.markersMaxCount)
-                    .map((event) => _buildSingleMarker(day, event, markerSize))
+                    .map((event) => _buildImpactMarker(day, markerSize))
+                    //_buildSingleMarker(day, event, markerSize))
                     .toList(),
               ),
             );
@@ -704,6 +705,19 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
           margin: widget.calendarStyle.markerMargin,
           decoration: widget.calendarStyle.markerDecoration,
         );
+  }
+
+// Method that creates a custom color marker of calendar cell
+  Widget _buildImpactMarker(DateTime day, double markerSize) {
+    return Container(
+      width: markerSize,
+      height: markerSize,
+      margin: widget.calendarStyle.markerMargin,
+      decoration: BoxDecoration(
+        color: widget.calendarStyle.impactMarkerColor,
+        shape: BoxShape.circle,
+      ),
+    );
   }
 
   int _calculateWeekNumber(DateTime date) {

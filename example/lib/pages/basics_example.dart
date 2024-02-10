@@ -15,6 +15,8 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
+  CalendarStyle _calendarStyle =
+      CalendarStyle(impactMarkerColor: Color(0xFF26FFFF));
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +29,7 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
         lastDay: kLastDay,
         focusedDay: _focusedDay,
         calendarFormat: _calendarFormat,
+        calendarStyle: _calendarStyle,
         selectedDayPredicate: (day) {
           // Use `selectedDayPredicate` to determine which day is currently selected.
           // If this returns true, then `day` will be marked as selected.
